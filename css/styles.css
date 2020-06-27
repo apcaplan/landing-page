@@ -1,0 +1,37 @@
+body {
+}
+
+footer {
+  border: 2px solid yellow;
+  align-items: center;
+  display: flex;
+  height: 100px;
+  justify-content: center;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+}
+
+.container {
+  border: 2px solid green;
+  height: 50vh;
+  margin: 1em;
+}
+
+.container h2 {
+  display: flex;
+  justify-content: center;
+  padding: 2em;
+}
+
+.container p {
+  padding: 0 2em;
+}
+
+.navbar {
+  border: 2px solid red;
+  height: 100px;
+}
