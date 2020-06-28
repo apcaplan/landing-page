@@ -5,7 +5,8 @@ const navMenu = document.getElementById("navbar-menu");
 function buildNav() {
   navElements.forEach((element) => {
     const elementText = document.querySelector(`#${element.id} h2`).innerHTML;
-    const menuElement = `<li class='navbar-item ${element.className}'><a href="#${element.id}">${elementText}</li>`;
+    const menuElement = `<li class='navbar-item ${element.className}'>
+      <a href="#${element.id}">${elementText}</li>`;
     navMenu.insertAdjacentHTML("beforeend", menuElement);
   });
 }
@@ -13,7 +14,12 @@ function buildNav() {
 // Determine if element is in viewport
 function checkVisible(element) {
   const bounding = element.getBoundingClientRect();
-  return bounding.top >= 0 && bounding.left >= 0 && bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight) && bounding.right <= (window.innerWidth || document.documentElement.clientWidth);
+  return bounding.top >= 0 &&
+    bounding.left >= 0 &&
+    bounding.bottom <= (window.innerHeight ||
+      document.documentElement.clientHeight) &&
+    bounding.right <= (window.innerWidth ||
+      document.documentElement.clientWidth);
 }
 
 // Add "active" classname to element in viewport
@@ -35,9 +41,9 @@ function scrollToTop() {
 // Show scroll to top button
 function scrollButton() {
   if (document.documentElement.scrollTop > 100 || document.body.scrollTop > 100) {
-    document.getElementById("scroll").style.display = "flex";
+    document.getElementById("scroll").classList.add("show");
   } else {
-    document.getElementById("scroll").style.display = "none";
+    document.getElementById("scroll").classList.remove("show");
   }
 }
 
@@ -45,6 +51,10 @@ function scrollButton() {
 window.addEventListener("scroll", (event) => {
   setActive();
   scrollButton();
+});
+
+document.getElementById("scroll").addEventListener("click", (event) => {
+  scrollToTop();
 });
 
 // Build the navbar

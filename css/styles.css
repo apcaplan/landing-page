@@ -184,6 +184,10 @@ html {
   z-index: 99;
 }
 
+.show {
+  display: flex;
+}
+
 .welcome {
   background: url("../images/bythewater.jpg") no-repeat center;
   background-size: cover;
