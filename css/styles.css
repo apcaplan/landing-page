@@ -36,11 +36,6 @@ html {
   scroll-behavior: smooth;
 }
 
-.about {
-  display: grid;
-  grid-template-columns: 30% 66%;
-}
-
 .about-photo {
   background: url("../images/face.jpg") no-repeat center;
   background-size: cover;
@@ -49,24 +44,11 @@ html {
   justify-content: center;
   margin: 0 auto;
   width: 55%;
-  height: 100%;
+  height: 60%;
 }
 
-.active {
-  box-shadow: 0 0 10px rgba(0,0,0,0.8);
-  z-index: 10;
-}
-
-.active h2 {
-  transform: scale(1.3);
-}
-
-.active h3 {
-  transform: scale(1.3);
-}
-
-.active p {
-  font-size: 1.3em;
+.about-text {
+  margin-bottom: 3em;
 }
 
 .card {
@@ -76,36 +58,7 @@ html {
   margin: 16px;
   min-height: 25vh;
   position: relative;
-  transition: margin .2s ease-out;
-}
-
-.card:hover {
-  transform: scale(1.08) translate(-16px, -16px);
-}
-
-.card::after {
-  content: '';
-  display: block;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  z-index: 1;
-}
-
-.card:hover .card::after {
-  opacity: 1;
-}
-
-.card::before {
-  background: rgba(0,0,0,.15);
-  bottom: -16px;
-  content:'';
-  position: absolute;
-  right: -16px;
-  top: 16px;
-  width: 100%;
-  z-index: -1;
+  transition: margin 0.2s ease-out;
 }
 
 .card-text {
@@ -127,36 +80,35 @@ html {
 
 .contact a {
   color: var(--background2);
-  /* font-size: 1.5em; */
   text-decoration: none;
 }
 
 .container {
   display: flex;
   flex-direction: column;
-  height: 50vh;
-  margin: 1em;
+  height: 100vh;
+  overflow: auto;
 }
 
 .container h2 {
   display: flex;
   justify-content: center;
-  padding: 1.3em;
+  padding: 1em;
 }
 
 .container p {
-  padding: 0 2em;
+  padding: 0 1em;
 }
 
 .explore-image {
   background: url("../images/explore.jpg") no-repeat center;
   background-size: cover;
-  opacity: 1;
 }
 
 .grow-image {
   background: url("../images/grow.jpg") no-repeat center;
   background-size: cover;
+  margin-bottom: 1em;
 }
 
 .in-touch {
@@ -178,7 +130,7 @@ html {
 }
 
 .link div {
-  font-size: 2em;
+  font-size: 1.7em;
 }
 
 .link p {
@@ -190,19 +142,20 @@ html {
   align-items: center;
   display: flex;
   font-family: var(--heading);
+  justify-content: center;
   height: 80px;
 }
 
 .navbar a {
   color: var(--nav);
-  font-size: 1.25em;
+  font-size: 1em;
   font-weight: 700;
   text-decoration: none;
   text-shadow: 2px 2px 1px var(--text);
 }
 
 .navbar-item {
-  padding-right: 1.5em;
+  padding-right: 1em;
 }
 
 .navbar-menu {
@@ -214,12 +167,6 @@ html {
 .section1 .container,
 .section3 .container {
   background-color: var(--background2);
-}
-
-.services {
-  display: grid;
-  grid-template-columns: 30% 30% 30%;
-  justify-content: space-around;
 }
 
 .scroll {
@@ -241,4 +188,187 @@ html {
   background: url("../images/bythewater.jpg") no-repeat center;
   background-size: cover;
   height: 100vh;
+}
+
+@media (min-width: 600px) and (max-width: 900px) {
+  .active {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    z-index: 10;
+  }
+
+  .active h2 {
+    transform: scale(1.3);
+  }
+
+  .active h3 {
+    transform: scale(1.3);
+  }
+
+  .active p {
+    font-size: 1.3em;
+  }
+
+  .contact {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .contact a {
+    color: var(--background2);
+    text-decoration: none;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+    margin: 1em;
+  }
+
+  .container h2 {
+    display: flex;
+    justify-content: center;
+    padding: 1.3em;
+  }
+
+  .container p {
+    padding: 0 2em;
+  }
+
+  .in-touch {
+    margin-bottom: 3em;
+  }
+
+  .navbar {
+    justify-content: flex-start;
+  }
+
+  .navbar a {
+    font-size: 1.25em;
+  }
+
+  .navbar-item {
+    padding-right: 1.5em;
+  }
+
+  .services {
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    justify-content: space-around;
+  }
+}
+
+@media (min-width: 901px) {
+  .about {
+    display: grid;
+    grid-template-columns: 30% 66%;
+  }
+
+  .about-photo {
+    height: 100%;
+  }
+
+  .about-text {
+    margin-bottom: 0;
+  }
+
+  .active {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    z-index: 10;
+  }
+
+  .active h2 {
+    transform: scale(1.3);
+  }
+
+  .active h3 {
+    transform: scale(1.3);
+  }
+
+  .active p {
+    font-size: 1.3em;
+  }
+
+  .card:hover {
+    transform: scale(1.08) translate(-16px, -16px);
+  }
+
+  .card::after {
+    content: "";
+    display: block;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+  }
+
+  .card:hover .card::after {
+    opacity: 1;
+  }
+
+  .card::before {
+    background: rgba(0, 0, 0, 0.15);
+    bottom: -16px;
+    content: "";
+    position: absolute;
+    right: -16px;
+    top: 16px;
+    width: 100%;
+    z-index: -1;
+  }
+
+  .container {
+    height: 50vh;
+    margin: 1em;
+  }
+
+  .container h2 {
+    display: flex;
+    justify-content: center;
+    padding: 1.3em;
+  }
+
+  .container p {
+    padding: 0 2em;
+  }
+
+  .explore-image {
+    margin-bottom: 0;
+    opacity: 1;
+  }
+
+  .grow-image {
+    margin-bottom: 0;
+  }
+
+  .in-touch {
+    margin-bottom: 3em;
+  }
+
+  .learn-image {
+    margin-bottom: 0;
+  }
+
+  .link div {
+    font-size: 2em;
+  }
+
+  .navbar {
+    justify-content: flex-start;
+  }
+
+  .navbar a {
+    font-size: 1.25em;
+  }
+
+  .navbar-item {
+    padding-right: 1.5em;
+  }
+
+  .services {
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    justify-content: space-around;
+  }
 }
