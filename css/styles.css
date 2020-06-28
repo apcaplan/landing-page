@@ -61,3 +61,18 @@ h1 {
 .navbar-menu li {
   padding-right: 1em;
 }
+
+.scroll {
+  align-items: center;
+  border: 2px solid;
+  border-radius: 50%;
+  bottom: 4em;
+  display: none;
+  font-size: 1em;
+  height: 2.5em;
+  justify-content: center;
+  position: fixed;
+  right: 2em;
+  width: 2.5em;
+  z-index: 99;
+}

@@ -34,9 +34,25 @@ function setActive() {
   })
 }
 
+// Scroll to top function
+function scrollToTop () {
+  window.scrollTo(0,0)
+}
+
+// Show scroll to top button
+function scrollButton () {
+  if (document.documentElement.scrollTop > 100 || document.body.scrollTop > 100) {
+    document.getElementById('scroll').style.display = 'flex'
+  } else {
+    document.getElementById('scroll').style.display = 'none'
+  }
+}
 
 // add Event listeners
-window.addEventListener('scroll', (event) => setActive())
+window.addEventListener('scroll', (event) => {
+  setActive()
+  scrollButton()
+})
 
 // Build the navbar
 buildNav()
