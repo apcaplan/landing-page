@@ -1,23 +1,59 @@
-html {
-  scroll-behavior: smooth;
+@import "colors.css";
+@import "typography.css";
+
+body {
+  color: var(--text);
+  font-family: var(--main);
 }
 
 footer {
-  border: 2px solid yellow;
   align-items: center;
+  background-color: var(--footer);
+  color: var(--subtext);
   display: flex;
   height: 50px;
   justify-content: center;
 }
 
 h1 {
+  align-items: center;
+  color: var(--nav);
+  display: flex;
+  font-size: 3em;
+  font-weight: 700;
+  height: 70vh;
+  justify-content: center;
+  margin: auto;
+  text-shadow: 2px 2px 1px var(--text);
+}
+
+h1,
+h2 {
+  font-family: var(--heading);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.about {
+  display: grid;
+  grid-template-columns: 30% 66%;
+}
+
+.about-photo {
+  background: url("../images/face.jpg") no-repeat center;
+  background-size: cover;
+  border-radius: 50%;
   display: flex;
   justify-content: center;
-  padding: 1em;
+  margin: 0 auto;
+  width: 55%;
+  height: 100%;
 }
 
 .active {
-  box-shadow: 0 0 8px rgba(0,0,0,0.8);
+  box-shadow: 0 0 10px rgba(0,0,0,0.8);
   z-index: 10;
 }
 
@@ -25,12 +61,79 @@ h1 {
   transform: scale(1.3);
 }
 
+.active h3 {
+  transform: scale(1.3);
+}
+
 .active p {
   font-size: 1.3em;
 }
 
+.card {
+  background-position: 50% 50%;
+  background-size: cover;
+  border: 1px solid #000;
+  margin: 16px;
+  min-height: 25vh;
+  position: relative;
+  transition: margin .2s ease-out;
+}
+
+.card:hover {
+  transform: scale(1.08) translate(-16px, -16px);
+}
+
+.card::after {
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.card:hover .card::after {
+  opacity: 1;
+}
+
+.card::before {
+  background: rgba(0,0,0,.15);
+  bottom: -16px;
+  content:'';
+  position: absolute;
+  right: -16px;
+  top: 16px;
+  width: 100%;
+  z-index: -1;
+}
+
+.card-text {
+  bottom: 24px;
+  color: var(--nav);
+  font-size: 1.1em;
+  left: 24px;
+  letter-spacing: 0.1em;
+  position: absolute;
+  right: 24px;
+  text-shadow: 2px 2px 1px var(--text);
+  z-index: 2;
+}
+
+.contact {
+  display: flex;
+  justify-content: space-around;
+}
+
+.contact a {
+  color: var(--background2);
+  /* font-size: 1.5em; */
+  text-decoration: none;
+}
+
 .container {
-  border: 2px solid green;
+  display: flex;
+  flex-direction: column;
   height: 50vh;
   margin: 1em;
 }
@@ -38,28 +141,85 @@ h1 {
 .container h2 {
   display: flex;
   justify-content: center;
-  padding: 2em;
+  padding: 1.3em;
 }
 
 .container p {
   padding: 0 2em;
 }
 
+.explore-image {
+  background: url("../images/explore.jpg") no-repeat center;
+  background-size: cover;
+  opacity: 1;
+}
+
+.grow-image {
+  background: url("../images/grow.jpg") no-repeat center;
+  background-size: cover;
+}
+
+.in-touch {
+  color: var(--subtext);
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3em;
+}
+
+.learn-image {
+  background: url("../images/learn.jpg") no-repeat center;
+  background-size: cover;
+}
+
+.link {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.link div {
+  font-size: 2em;
+}
+
+.link p {
+  padding: 0;
+  margin: 0;
+}
+
 .navbar {
   align-items: center;
-  border: 2px solid red;
   display: flex;
-  justify-content: flex-end;
+  font-family: var(--heading);
   height: 80px;
 }
 
+.navbar a {
+  color: var(--nav);
+  font-size: 1.25em;
+  font-weight: 700;
+  text-decoration: none;
+  text-shadow: 2px 2px 1px var(--text);
+}
+
+.navbar-item {
+  padding-right: 1.5em;
+}
+
 .navbar-menu {
+  align-self: center;
   display: flex;
   list-style: none;
 }
 
-.navbar-menu li {
-  padding-right: 1em;
+.section1 .container,
+.section3 .container {
+  background-color: var(--background2);
+}
+
+.services {
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  justify-content: space-around;
 }
 
 .scroll {
@@ -75,4 +235,10 @@ h1 {
   right: 2em;
   width: 2.5em;
   z-index: 99;
+}
+
+.welcome {
+  background: url("../images/bythewater.jpg") no-repeat center;
+  background-size: cover;
+  height: 100vh;
 }

@@ -1,8 +1,6 @@
 const navElements = document.querySelectorAll('section')
 const navMenu = document.getElementById('navbar-menu')
 
-console.log(navElements)
-
 // Create navbar menu from navElements
 function buildNav () {
   navElements.forEach(element => {
